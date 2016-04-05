@@ -11,6 +11,8 @@ const {
   PropTypes,
 } = React;
 
+import SmallThing from './SmallThing';
+
 const styles = StyleSheet.create({
   Container: {
     backgroundColor: '#9f9f9f',
@@ -32,7 +34,7 @@ class SmallThings extends Component {
 
   renderRow(todo) {
     return (
-      <Text>{todo.task}</Text>
+      <SmallThing smallTodo={todo} />
     );
   }
 
