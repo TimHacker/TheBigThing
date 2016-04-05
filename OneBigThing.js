@@ -7,11 +7,12 @@ const {
   StyleSheet,
   View,
   Component,
+  PropTypes,
 } = React;
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 40,
+    paddingTop: 10,
     backgroundColor: '#f0f0f0',
   },
 });
@@ -20,10 +21,17 @@ class OneBigThing extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Big thing to do</Text>
+        <Text>{this.props.bigTodo.task}</Text>
       </View>
     );
   }
 }
+
+OneBigThing.propTypes = {
+  bigTodo: PropTypes.shape({
+    task: PropTypes.string.isRequired,
+    completed: PropTypes.bool,
+  }).isRequired,
+};
 
 export default OneBigThing;
