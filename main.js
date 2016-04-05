@@ -1,25 +1,26 @@
+
 'use strict';
 
-let React = require('react-native');
-let {
+const React = require('react-native');
+const {
   AppRegistry,
   Component,
-  Text
+  Text,
 } = React;
-
 
 
 class TheBigThing extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
+      todos: [],
     };
   }
 
   render() {
     return (
       <Text>The Big Thing!</Text>
-    )
+    );
   }
 }
 
