@@ -9,6 +9,10 @@
     "sdkVersion": "4.0.0"
   },
   "dependencies": {
+    "babel-eslint": "^6.0.2",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3",
     "react-native": "github:exponentjs/react-native#2016-01-02"
   }
 }
