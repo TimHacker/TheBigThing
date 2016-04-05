@@ -1,25 +1,33 @@
-
 'use strict';
 
 const React = require('react-native');
+
 const {
   AppRegistry,
   Component,
-  Text,
 } = React;
 
+import BigThing from './BigThing';
 
 class TheBigThing extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      todos: [],
+      oneBigThing: '',
+      someSmallThings: [
+        {
+          task: 'Learn React native',
+        },
+        {
+          task: 'Take a nap',
+        },
+      ],
     };
   }
 
   render() {
     return (
-      <Text>The Big Thing!</Text>
+      <BigThing />
     );
   }
 }
