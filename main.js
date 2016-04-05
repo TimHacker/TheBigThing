@@ -3,7 +3,8 @@
 let React = require('react-native');
 let {
   AppRegistry,
-  Component
+  Component,
+  Text
 } = React;
 
 
@@ -16,7 +17,9 @@ class TheBigThing extends Component {
   }
 
   render() {
-
+    return (
+      <Text>The Big Thing!</Text>
+    )
   }
 }
 
