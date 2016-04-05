@@ -21,7 +21,7 @@ class OneBigThing extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.props.bigTodo.task}</Text>
+        <Text>The one big thing: {this.props.bigTodo.task}</Text>
       </View>
     );
   }
