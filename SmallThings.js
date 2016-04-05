@@ -14,7 +14,7 @@ const {
 import SmallThing from './SmallThing';
 
 const styles = StyleSheet.create({
-  Container: {
+  container: {
     backgroundColor: '#9f9f9f',
   },
 });
@@ -40,12 +40,13 @@ class SmallThings extends Component {
 
   render() {
     return (
-      <View style={styles.Container}>
+      <View style={styles.container}>
         <Text>Some small things:</Text>
         <ListView
             dataSource={this.state.dataSource}
             key={this.props.smallTodos}
             renderRow={this.renderRow.bind(this)}
+            style={styles.list}
         />
       </View>
     );

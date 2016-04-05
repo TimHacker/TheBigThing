@@ -10,38 +10,34 @@ const {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#ffffff',
-    borderColor: '#E7E7E7',
-    borderWidth: 1,
-    marginBottom: 20,
-    marginLeft: 20,
-    marginRight: 20,
-    padding: 20,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    marginBottom: 10,
+    padding: 5,
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   label: {
-    fontSize: 20,
     fontWeight: '300',
   },
 });
 
-class SmallThing extends Component {
+class OtherThing extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.label}>Task:{this.props.smallTodo.task}</Text>
+        <Text style={styles.label}>Task:{this.props.otherTodo.task}</Text>
       </View>
     );
   }
 }
 
-SmallThing.propTypes = {
-  smallTodo: PropTypes.shape({
+OtherThing.propTypes = {
+  otherTodo: PropTypes.shape({
     task: PropTypes.string.isRequired,
     completed: PropTypes.bool,
   }).isRequired,
 };
 
-export default SmallThing;
+export default OtherThing;
