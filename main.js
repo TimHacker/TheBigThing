@@ -8,7 +8,7 @@ const {
   View,
 } = React;
 
-import BigThing from './BigThing';
+import OneBigThing from './OneBigThing';
 import SmallThings from './SmallThings';
 
 class TheBigThing extends Component {
@@ -30,7 +30,7 @@ class TheBigThing extends Component {
   render() {
     return (
       <View>
-        <BigThing />
+        <OneBigThing />
         <SmallThings />
       </View>
     );

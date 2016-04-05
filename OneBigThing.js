@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
 });
 
-class BigThing extends Component {
+class OneBigThing extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -26,4 +26,4 @@ class BigThing extends Component {
   }
 }
 
-export default BigThing;
+export default OneBigThing;
