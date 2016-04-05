@@ -1,13 +1,15 @@
 'use strict';
 
-const React = require('react-native');
+import React from 'react-native';
 
 const {
   AppRegistry,
   Component,
+  View,
 } = React;
 
 import BigThing from './BigThing';
+import SmallThings from './SmallThings';
 
 class TheBigThing extends Component {
   constructor(props, context) {
@@ -27,7 +29,10 @@ class TheBigThing extends Component {
 
   render() {
     return (
-      <BigThing />
+      <View>
+        <BigThing />
+        <SmallThings />
+      </View>
     );
   }
 }
