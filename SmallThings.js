@@ -17,6 +17,14 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#9f9f9f',
   },
+  list: {
+    flexDirection: 'row',
+    flex: 1,
+  },
+  listItems: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
 });
 
 class SmallThings extends Component {
@@ -47,6 +55,7 @@ class SmallThings extends Component {
             key={this.props.smallTodos}
             renderRow={this.renderRow.bind(this)}
             style={styles.list}
+            contentContainerStyle={styles.listItems}
         />
       </View>
     );
