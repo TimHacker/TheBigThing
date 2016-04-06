@@ -13,7 +13,7 @@ import SmallThing from './SmallThing';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#9f9f9f',
+    backgroundColor: '#f0f0f0',
     flexDirection: 'row',
     alignItems: 'center',
   },

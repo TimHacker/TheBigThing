@@ -17,14 +17,15 @@ import AppStore from './AppStore';
 import OneBigThing from './OneBigThing';
 import SmallThings from './SmallThings';
 import OtherThings from './OtherThings';
+import Settings from './Settings';
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: 20,
-    paddingLeft: 5,
-    paddingRight: 5,
-    paddingBottom: 5,
-    backgroundColor: '##3fc8a9',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 10,
+    backgroundColor: '#3fc8a9',
     flex: 1,
     justifyContent: 'flex-start',
   },
@@ -53,6 +54,13 @@ class TheBigThing extends Component {
     this.state = AppStore;
   }
 
+  onBack() {
+    console.log('back pressed');
+    this.nav.push({
+      name: 'todos',
+    });
+  }
+
   onAddOther() {
     console.log('on add started');
 
@@ -74,12 +82,7 @@ class TheBigThing extends Component {
     switch (route.name) {
     case 'settings':
       return (
-      <Text style={{
-        paddingTop: 30,
-      }}
-      >
-      Settings page
-      </Text>
+      <Settings onBack={this.onBack.bind(this)} />
     );
     default:
       return (
