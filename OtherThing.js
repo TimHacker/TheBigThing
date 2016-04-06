@@ -3,6 +3,7 @@ import React from 'react-native';
 const {
   Component,
   Text,
+  TouchableHighlight,
   View,
   PropTypes,
   StyleSheet,
@@ -20,6 +21,11 @@ const styles = StyleSheet.create({
   },
   label: {
     fontWeight: '300',
+    textAlign: 'center',
+    flex: 1,
+  },
+  buttonText: {
+    color: 'white',
   },
 });
 
@@ -27,7 +33,10 @@ class OtherThing extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.label}>Task:{this.props.otherTodo.task}</Text>
+        <Text style={styles.label}>{this.props.otherTodo.task}</Text>
+        <TouchableHighlight style={styles.button}>
+          <Text style={styles.buttonText}>✓ Done</Text>
+        </TouchableHighlight>
       </View>
     );
   }

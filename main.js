@@ -66,12 +66,21 @@ class TheBigThing extends Component {
     });
   }
 
+  configureScene() {
+    return Navigator.SceneConfigs.FloatFromBottom;
+  }
+
   renderScene(route, nav) {
     switch (route.name) {
     case 'settings':
-      return <Text style={{
+      return (
+      <Text style={{
         paddingTop: 30,
-      }}>Settings page</Text>;
+      }}
+      >
+      Settings page
+      </Text>
+    );
     default:
       return (
           <View style={styles.container}>
@@ -96,6 +105,7 @@ class TheBigThing extends Component {
   render() {
     return (
       <Navigator
+          configureScene={this.configureScene}
           initialRoute={{ name: 'tasklist', index: 0 }}
           ref={((nav) => {
             this.nav = nav;
