@@ -11,11 +11,22 @@ const {
   PropTypes,
 } = React;
 
+import ColorPicker from './ColorPicker';
+
 const styles = StyleSheet.create({
   container: {
+    padding: 10,
+    paddingTop: 20,
     backgroundColor: '#3fc8a9',
     flex: 1,
     justifyContent: 'flex-start',
+  },
+  heading: {
+    fontSize: 30,
+    fontWeight: '600',
+    color: 'white',
+    textAlign: 'center',
+    paddingBottom: 5,
   },
   button: {
     justifyContent: 'center',
@@ -34,12 +45,12 @@ class Settings extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={{
-          paddingTop: 30,
-        }}
+        <Text
+            style={styles.heading}
         >
-        Settings page. New page!!
+        Settings
         </Text>
+        <ColorPicker />
         <TouchableHighlight
             onPress={this.props.onBack}
             style={styles.button}

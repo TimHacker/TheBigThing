@@ -5,47 +5,13 @@ import React from 'react-native';
 const {
   AppRegistry,
   Component,
-  View,
-  Text,
-  StyleSheet,
-  TouchableHighlight,
   Navigator,
 } = React;
 
 import AppStore from './AppStore';
 
-import OneBigThing from './OneBigThing';
-import SmallThings from './SmallThings';
-import OtherThings from './OtherThings';
+import Todos from './Todos';
 import Settings from './Settings';
-
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 20,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 10,
-    backgroundColor: '#3fc8a9',
-    flex: 1,
-    justifyContent: 'flex-start',
-  },
-  label: {
-    fontSize: 30,
-    fontWeight: '600',
-    textAlign: 'center',
-  },
-  button: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 40,
-    borderColor: '#f5f5f5',
-    borderWidth: 1,
-    marginTop: 20,
-  },
-  buttonText: {
-    color: 'white',
-  },
-});
 
 class TheBigThing extends Component {
   constructor(props, context) {
@@ -55,15 +21,10 @@ class TheBigThing extends Component {
   }
 
   onBack() {
-    console.log('back pressed');
-    this.nav.push({
-      name: 'todos',
-    });
+    this.nav.pop();
   }
 
   onAddOther() {
-    console.log('on add started');
-
     const newTodo = { task: 'newly added' };
     this.state.otherThings.push(newTodo);
   }
@@ -86,21 +47,13 @@ class TheBigThing extends Component {
     );
     default:
       return (
-          <View style={styles.container}>
-            <Text style={styles.label}>Today</Text>
-            <OneBigThing bigTodo={this.state.oneBigThing} />
-            <SmallThings smallTodos={this.state.someSmallThings} />
-            <OtherThings
-                onAddOther={this.onAddOther.bind(this)}
-                otherTodos={this.state.otherThings}
-            />
-            <TouchableHighlight
-                onPress={this.viewSettings.bind(this)}
-                style={styles.button}
-            >
-              <Text style={styles.buttonText}>Settings</Text>
-            </TouchableHighlight>
-          </View>
+          <Todos
+              onAddOther={this.onAddOther.bind(this)}
+              oneBigThing={this.state.oneBigThing}
+              otherThings={this.state.otherThings}
+              someSmallThings={this.state.someSmallThings}
+              viewSettings={this.viewSettings.bind(this)}
+          />
         );
     }
   }
