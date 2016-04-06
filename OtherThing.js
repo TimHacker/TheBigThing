@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   container: {
     borderTopWidth: 1,
     borderBottomWidth: 1,
+    borderColor: '#797979',
     marginBottom: 10,
     padding: 5,
     flex: 1,
@@ -35,7 +36,7 @@ class OtherThing extends Component {
       <View style={styles.container}>
         <Text style={styles.label}>{this.props.otherTodo.task}</Text>
         <TouchableHighlight style={styles.button}>
-          <Text style={styles.buttonText}>✓ Done</Text>
+          <Text style={styles.buttonText}>✓DONE</Text>
         </TouchableHighlight>
       </View>
     );

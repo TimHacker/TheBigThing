@@ -6,7 +6,6 @@ const {
   StyleSheet,
   Text,
   View,
-  TextInput,
   TouchableHighlight,
   Component,
   PropTypes,
@@ -14,7 +13,8 @@ const {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'white',
+    borderRadius: 5,
     height: 200,
     padding: 5,
     justifyContent: 'center',
@@ -27,12 +27,14 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 35,
+    textAlign: 'center',
   },
   button: {
     padding: 5,
   },
   buttonText: {
-    color: 'blue',
+    color: '#2B92FF',
+    fontSize: 12,
   },
   input: {
     textDecorationLine: 'underline',
@@ -47,12 +49,9 @@ class OneBigThing extends Component {
       <View style={styles.container}>
         <View style={styles.todoContainer}>
           <Text style={styles.label}>{this.props.bigTodo.task}</Text>
-          <TextInput
-              style={[styles.label, styles.input]}
-          />
         </View>
         <TouchableHighlight style={styles.button}>
-          <Text style={styles.buttonText}>✓ Done</Text>
+          <Text style={styles.buttonText}>✓DONE</Text>
         </TouchableHighlight>
       </View>
     );

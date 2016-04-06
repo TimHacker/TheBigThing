@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: '#f5f5f5',
     borderWidth: 1,
-    marginTop: 20,
+    marginTop: 10,
+    marginBottom: 10,
   },
   buttonText: {
     color: 'white',
@@ -46,18 +47,18 @@ class Todos extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>Today</Text>
-        <OneBigThing bigTodo={this.props.oneBigThing} />
-        <SmallThings smallTodos={this.props.someSmallThings} />
-        <OtherThings
-            onAddOther={this.props.onAddOther}
-            otherTodos={this.props.otherThings}
-        />
         <TouchableHighlight
             onPress={this.props.viewSettings}
             style={styles.button}
         >
           <Text style={styles.buttonText}>Settings</Text>
         </TouchableHighlight>
+        <OneBigThing bigTodo={this.props.oneBigThing} />
+        <SmallThings smallTodos={this.props.someSmallThings} />
+        <OtherThings
+            onAddOther={this.props.onAddOther}
+            otherTodos={this.props.otherThings}
+        />
       </View>
     );
   }

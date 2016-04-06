@@ -17,10 +17,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     textAlign: 'center',
     color: '#ffffff',
+    padding: 5,
   },
   button: {
     borderTopWidth: 1,
-    borderColor: '#3f3f3f',
+    borderColor: '#797979',
     borderBottomWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
