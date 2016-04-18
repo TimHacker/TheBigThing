@@ -24,6 +24,17 @@ class TheBigThing extends Component {
     this.nav.pop();
   }
 
+  onBigThingChange(task) {
+    console.log(`big thing changed to ${task}`);
+    this.setState({ oneBigThing: { task } });
+    console.log(this.state);
+  }
+
+  onCompleteBigThing() {
+    this.setState({ oneBigThing: { completed: true } });
+    console.log(this.state);
+  }
+
   onAddOther() {
     const newTodo = { task: 'newly added' };
     this.state.otherThings.push(newTodo);
@@ -49,6 +60,8 @@ class TheBigThing extends Component {
       return (
           <Todos
               onAddOther={this.onAddOther.bind(this)}
+              onBigThingChange={this.onBigThingChange.bind(this)}
+              onCompleteBigThing={this.onCompleteBigThing.bind(this)}
               oneBigThing={this.state.oneBigThing}
               otherThings={this.state.otherThings}
               someSmallThings={this.state.someSmallThings}

@@ -53,7 +53,11 @@ class Todos extends Component {
         >
           <Text style={styles.buttonText}>Settings</Text>
         </TouchableHighlight>
-        <OneBigThing bigTodo={this.props.oneBigThing} />
+        <OneBigThing
+            bigTodo={this.props.oneBigThing}
+            onBigThingChange={this.props.onBigThingChange}
+            onCompleteBigThing={this.props.onCompleteBigThing}
+        />
         <SmallThings smallTodos={this.props.someSmallThings} />
         <OtherThings
             onAddOther={this.props.onAddOther}
@@ -66,6 +70,7 @@ class Todos extends Component {
 
 Todos.propTypes = {
   onAddOther: PropTypes.func.isRequired,
+  onBigThingChange: PropTypes.func.isRequired,
   oneBigThing: PropTypes.shape({
     task: PropTypes.string.isRequired,
     completed: PropTypes.bool,

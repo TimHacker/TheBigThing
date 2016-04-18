@@ -5,6 +5,7 @@ import React from 'react-native';
 const {
   StyleSheet,
   Text,
+  TextInput,
   View,
   TouchableHighlight,
   Component,
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   label: {
-    fontSize: 35,
+    fontSize: 15,
     textAlign: 'center',
   },
   button: {
@@ -39,7 +40,12 @@ const styles = StyleSheet.create({
   input: {
     textDecorationLine: 'underline',
     borderColor: '#f0f0f0',
-    borderBottomWidth: 1,
+    borderWidth: 1,
+    width: 250,
+    color: '#000',
+    fontSize: 30,
+    flex: 1,
+    padding: 20,
   },
 });
 
@@ -48,9 +54,19 @@ class OneBigThing extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.todoContainer}>
-          <Text style={styles.label}>{this.props.bigTodo.task}</Text>
+          <TextInput
+              multiline
+              onChangeText={this.props.onBigThingChange}
+              placeholder="What is your one big thing?"
+              style={styles.input}
+              value={this.props.bigTodo.task}
+          />
+          <Text style={styles.label}>Task: {this.props.bigTodo.task}</Text>
         </View>
-        <TouchableHighlight style={styles.button}>
+        <TouchableHighlight
+            onPress={this.props.onCompleteBigThing}
+            style={styles.button}
+        >
           <Text style={styles.buttonText}>✓DONE</Text>
         </TouchableHighlight>
       </View>
@@ -63,6 +79,7 @@ OneBigThing.propTypes = {
     task: PropTypes.string.isRequired,
     completed: PropTypes.bool,
   }).isRequired,
+  onBigThingChange: PropTypes.func.isRequired,
 };
 
 export default OneBigThing;
