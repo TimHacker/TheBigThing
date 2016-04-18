@@ -1,6 +1,6 @@
 export default {
   oneBigThing: {
-    task: 'Win at React by taking course!',
+    task: '',
     completed: false,
   },
   someSmallThings: {
