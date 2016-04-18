@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     borderRadius: 5,
-    height: 200,
+    height: 250,
     padding: 5,
     justifyContent: 'center',
     alignItems: 'center',
@@ -47,6 +47,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
+  completed: {
+    textDecorationLine: 'line-through',
+  },
 });
 
 class OneBigThing extends Component {
@@ -61,7 +64,12 @@ class OneBigThing extends Component {
               style={styles.input}
               value={this.props.bigTodo.task}
           />
-          <Text style={styles.label}>Task: {this.props.bigTodo.task}</Text>
+          <Text
+              style={[styles.label, this.props.bigTodo.completed && styles.completed]}
+          >
+          Task: {this.props.bigTodo.task},
+          Completed: {this.props.bigTodo.completed.toString()}
+          </Text>
         </View>
         <TouchableHighlight
             onPress={this.props.onCompleteBigThing}
