@@ -26,12 +26,12 @@ class TheBigThing extends Component {
 
   onBigThingChange(task) {
     console.log(`big thing changed to ${task}`);
-    this.setState({ oneBigThing: { task } });
+    this.setState({ oneBigThing: {...this.state.oneBigThing, task } });
     console.log(this.state);
   }
 
   onCompleteBigThing() {
-    this.setState({ oneBigThing: { completed: true } });
+    this.setState({ oneBigThing: { ...this.state.oneBigThing, completed: true } })
     console.log(this.state);
   }
 
