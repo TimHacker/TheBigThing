@@ -71,6 +71,7 @@ class Todos extends Component {
 Todos.propTypes = {
   onAddOther: PropTypes.func.isRequired,
   onBigThingChange: PropTypes.func.isRequired,
+  onCompleteBigThing: PropTypes.func.isRequired,
   oneBigThing: PropTypes.shape({
     task: PropTypes.string.isRequired,
     completed: PropTypes.bool,

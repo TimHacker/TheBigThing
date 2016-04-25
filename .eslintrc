@@ -7,6 +7,9 @@
         "node": true,
         "jasmine": true,
     },
+    "parserOptions": {
+        "ecmaVersion": 6,
+    },
     "rules": {
         "indent": [1, 2],
         "no-console": 0,
@@ -42,6 +45,7 @@
         "id-length": 0,
     },
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimentalObjectRestSpread": true,
     },
 }

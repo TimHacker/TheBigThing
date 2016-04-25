@@ -88,6 +88,7 @@ OneBigThing.propTypes = {
     completed: PropTypes.bool,
   }).isRequired,
   onBigThingChange: PropTypes.func.isRequired,
+  onCompleteBigThing: PropTypes.func.isRequired,
 };
 
 export default OneBigThing;
